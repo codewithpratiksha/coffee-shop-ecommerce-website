@@ -1,6 +1,3 @@
-// if(localStorage.getItem("isLoggedIn") !== "true"){
-//     window.location.href = "loginpage.html";
-// }
 
 //Get-user-name
 let username =
