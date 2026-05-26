@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/products.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md  fixed-top">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand">
+                <img src="images/coffee-cup.png" alt="logo" width="50" height="50">
+                <span class="logo-text d-inline-block align-text-top">Aroma Cafe</span>
+            </a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu"><span class="navbar-toggler-icon"></span></button>
+            
+            <div class="collapse navbar-collapse menu justify" id="menu">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item mx-3 h6">
+                        <a href="index.html" class="nav-link nav-text fw-bold">Home</a>
+                    </li>
+                    <li class="nav-item mx-3 h6">
+                        <a href="products.html" target="_blank" class="nav-link nav-text fw-bold">Products</a>
+                    </li>
+                    <li class="nav-item mx-3 h6">
+                        <a href="index.html#aboutus" class="nav-link nav-text fw-bold">About</a>
+                    </li>
+                    <li class="nav-item mx-3 h6">
+                        <a href="index.html#menu-section" class="nav-link nav-text fw-bold">Menu</a>
+                    </li>
+                    <li class="nav-item mx-3 h6">
+                        <a href="index.html#reviews-section" class="nav-link nav-text fw-bold">Reviews</a>
+                    </li>
+                </ul>
+    
+                <ul class="navbar-nav mx-2">
+                    <li class="nav-item mx-2">
+                        <a href="wishlist.html" class="nav-link nav-icon-link">
+                            <div class="nav-circle">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a href="add_to_cart.html" class="nav-link nav-icon-link">
+                            <div class="nav-circle">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span id="cartCount"class="cart-count">0</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a href="loginpage.html" target="_blank" class="nav-link user-profile">
+                            <div class="nav-circle">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <span id="navbarUser">Login</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a href="#" class="nav-link logout-link" onclick="logout()">
+                            <div class="nav-circle logout-circle">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                            </div>
+                            <span class="logout-text">Logout</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Products-Section -->
+
+    <div class="products-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="products-title fw-bold">Our Coffee Collection</h2>
+                <p class="products-subtitle fw-bold">Freshly brewed happiness in every cup ☕</p>
+            </div>
+            
+            <div class="text-center mb-5">
+                <button class="btn category-btn active" onclick="filterProducts('all', this)">All</button>
+                <button class="btn category-btn" onclick="filterProducts('hot', this)">Hot Beverages</button>
+                <button class="btn category-btn" onclick="filterProducts('cold', this)">Cold Beverages</button>
+            </div>
+            <div class="row g-4" id="productsContainer">
+                
+                <!-- Hot products1 -->
+                <div class="col-lg-3 col-md-6 product-item hot">
+                    <div class="card product-card border-0">
+                        <div class="product-img-box">
+                            <button class="wishlist-btn" onclick="addToWishlist('Espresso','100','images/espresso_crop.jpg',this)">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                            <img src="images/espresso_crop.jpg" class="card-img-top product-img" alt="Espresso">
+                        </div>
+                        <div class="card-body">
+                            <span class="product-badge">Hot</span>
+                            <h5 class="product-name mt-3">Espresso</h5>
+                            <p class="product-desc">A single, intense, and robust shot of pure coffee</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="product-price">₹100</h6>
+                                <button class="btn cart-btn" onclick="addToCart('Espresso','₹100','images/espresso_crop.jpg')">Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hot products2 -->
+                <div class="col-lg-3 col-md-6 product-item hot">
+                    <div class="card product-card border-0">
+                        <div class="product-img-box">
+                            <button class="wishlist-btn" onclick="addToWishlist('Americano','100','images/hot-americano_crop.jpg',this)">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                            <img src="images/hot-americano_crop.jpg" class="card-img-top product-img" alt="Americano">
+                        </div>
+                        <div class="card-body">
+                            <span class="product-badge">Hot</span>
+                            <h5 class="product-name mt-3">Americano</h5>
+                            <p class="product-desc">Rich espresso blended with hot water for a smooth, full-bodied black coffee.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="product-price">₹100</h6>
+                                <button class="btn cart-btn" onclick="addToCart('Americano','₹100','images/hot-americano_crop.jpg')">Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hot products3 -->
+                <div class="col-lg-3 col-md-6 product-item hot">
+                    <div class="card product-card border-0">
+                        <div class="product-img-box">
+                            <button class="wishlist-btn" onclick="addToWishlist('Cappuccino','200','images/cappuccino_crop2.jpg',this)">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                            <img src="images/cappuccino_crop2.jpg" class="card-img-top product-img" alt="Cappuccino">
+                        </div>
+                        <div class="card-body">
+                            <span class="product-badge">Hot</span>
+                            <h5 class="product-name mt-3">Cappuccino</h5>
+                            <p class="product-desc">Rich espresso with creamy milk foam.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="product-price">₹200</h6>
+                                <button class="btn cart-btn" onclick="addToCart('Cappuccino','₹200','images/cappuccino_crop2.jpg')">Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hot products4 -->
+                <div class="col-lg-3 col-md-6 product-item hot">
+                    <div class="card product-card border-0">
+                        <div class="product-img-box">
+                            <button class="wishlist-btn" onclick="addToWishlist('Latte','250','images/hot_latte1.jpg',this)">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                            <img src="images/hot_latte1.jpg" class="card-img-top product-img" alt="Latte">
+                        </div>
+                        <div class="card-body">
+                            <span class="product-badge">Hot</span>
+                            <h5 class="product-name mt-3">Latte</h5>
+                            <p class="product-desc">Rich, bold espresso blended with smooth steamed milk for a perfect, creamy balance.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="product-price">₹250</h6>
+                                <button class="btn cart-btn" onclick="addToCart('Latte','₹250','images/hot_latte1.jpg')">Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hot products5 -->
+                <div class="col-lg-3 col-md-6 product-item hot">
+                    <div class="card product-card border-0">
+                        <div class="product-img-box">
+                            <button class="wishlist-btn" onclick="addToWishlist('Mocha','250','images/mocha_crop.jpg',this)">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                            <img src="images/mocha_crop.jpg" class="card-img-top product-img" alt="Mocha">
+                        </div>
+                        <div class="card-body">
+                            <span class="product-badge">Hot</span>
+                            <h5 class="product-name mt-3">Mocha</h5>
+                            <p class="product-desc">Espresso, steamed milk, and rich chocolate. A sweet and creamy coffee treat.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="product-price">₹250</h6>
+                                <button class="btn cart-btn" onclick="addToCart('Mocha','₹250','images/mocha_crop.jpg')">Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cold products1 -->
+                <div class="col-lg-3 col-md-6 product-item cold">
+                    <div class="card product-card border-0">
+                        <div class="product-img-box">
+                            <button class="wishlist-btn" onclick="addToWishlist('Iced Coffee','180','images/iced_coffee.jpg',this)">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                            <img src="images/iced_coffee.jpg" class="card-img-top product-img" alt="Iced_Coffee">
+                        </div>
+                        <div class="card-body">
+                            <span class="product-badge cold-badge">Cold</span>
+                            <h5 class="product-name mt-3">Iced Coffee</h5>
+                            <p class="product-desc">Our signature brewed coffee over ice, finished with a generous pour of chilled, creamy milk.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="product-price">₹180</h6>
+                                <button class="btn cart-btn" onclick="addToCart('Iced Coffee','₹180','images/iced_coffee.jpg')">Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cold products2 -->
+                <div class="col-lg-3 col-md-6 product-item cold">
+                    <div class="card product-card border-0">
+                        <div class="product-img-box">
+                            <button class="wishlist-btn" onclick="addToWishlist('Iced Latte','180','images/latte_crop.jpg',this)">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                            <img src="images/latte_crop.jpg" class="card-img-top product-img" alt="Iced_latte">
+                        </div>
+                        <div class="card-body">
+                            <span class="product-badge cold-badge">Cold</span>
+                            <h5 class="product-name mt-3">Iced Latte</h5>
+                            <p class="product-desc">A smooth blend of bold espresso and creamy cold milk on the rocks.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="product-price">₹180</h6>
+                                <button class="btn cart-btn" onclick="addToCart('Iced Latte','₹180','images/latte_crop.jpg')">Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cold products3 -->
+                <div class="col-lg-3 col-md-6 product-item cold">
+                    <div class="card product-card border-0">
+                        <div class="product-img-box">
+                            <button class="wishlist-btn" onclick="addToWishlist('Iced Mocha','200','images/iced_mocha.jpg',this)">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                            <img src="images/iced_mocha.jpg" class="card-img-top product-img" alt="Iced_mocha">
+                        </div>
+                        <div class="card-body">
+                            <span class="product-badge cold-badge">Cold</span>
+                            <h5 class="product-name mt-3">Iced Mocha</h5>
+                            <p class="product-desc">A chilled blend of bold espresso, sweet chocolate, and cold milk.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="product-price">₹200</h6>
+                                <button class="btn cart-btn" onclick="addToCart('Iced Mocha','₹200','images/iced_mocha.jpg')">Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cold products4 -->
+                <div class="col-lg-3 col-md-6 product-item cold">
+                    <div class="card product-card border-0">
+                        <div class="product-img-box">
+                            <button class="wishlist-btn" onclick="addToWishlist('Cold Brew','250','images/cold brew.jpg',this)">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                            <img src="images/cold brew.jpg" class="card-img-top product-img" alt="Cold_brew">
+                        </div>
+                        <div class="card-body">
+                            <span class="product-badge cold-badge">Cold</span>
+                            <h5 class="product-name mt-3">Cold Brew</h5>
+                            <p class="product-desc">Slow-steeped in cold water, free of bitterness, and served over ice.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="product-price">₹250</h6>
+                                <button class="btn cart-btn" onclick="addToCart('Cold Brew','₹250','images/cold brew.jpg')">Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cold products5 -->
+                <div class="col-lg-3 col-md-6 product-item cold">
+                    <div class="card product-card border-0">
+                        <div class="product-img-box">
+                            <button class="wishlist-btn" onclick="addToWishlist('Cold Coffee','250','images/cold coffee_crop.jpg',this)">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                            <img src="images/cold coffee_crop.jpg" class="card-img-top product-img" alt="Cold_coffee">
+                        </div>
+                        <div class="card-body">
+                            <span class="product-badge cold-badge">Cold</span>
+                            <h5 class="product-name mt-3">Cold Coffee</h5>
+                            <p class="product-desc">Rich, creamy, and frothy. The ultimate refreshing pick-me-up for hot days.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="product-price">₹250</h6>
+                                <button class="btn cart-btn" onclick="addToCart('Cold Coffee','₹250','images/cold coffee_crop.jpg')">Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Footer-section -->
+<footer class="footer-section">
+    <div class="footer-overlay">
+        <div class="container py-5">
+            <div class="row gy-5">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <h2 class="footer-logo">
+                        <i class="fa-solid fa-mug-hot"></i>
+                        Aroma Cafe
+                    </h2>
+                    <p class="footer-text">
+                        Serving handcrafted coffee with warmth,comfort and unforgettable flavors.
+                    </p>
+                    <p class="footer-heading">Opening Hours</p>
+                    <p class="footer-text">Monday - Saturday 09AM - 09PM<br> Sunday 10AM - 08PM</p>
+                </div>
+                <div class="col-lg-2 col-md-6 col-12">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#menu-section">Menu</a></li>
+                        <li><a href="#aboutus">About</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            123, Anywhere st.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            1+234-456-7890
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            aromacafe@gmail.com
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/" class="social-icon">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/" class="social-icon">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://x.com/" class="social-icon">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.youtube.com/" class="social-icon">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-5">
+                <p>© 2026 Aroma Cafe | All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/products.js"></script>
+</body>
+</html>

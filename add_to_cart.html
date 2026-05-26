@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/add_to_cart.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md  fixed-top">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand">
+                <img src="images/coffee-cup.png" alt="logo" width="50" height="50">
+                <span class="logo-text d-inline-block align-text-top">Aroma Cafe</span>
+            </a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu"><span class="navbar-toggler-icon"></span></button>
+            
+            <div class="collapse navbar-collapse menu justify" id="menu">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item mx-3 h6">
+                        <a href="index.html" class="nav-link nav-text fw-bold">Home</a>
+                    </li>
+                    <li class="nav-item mx-3 h6">
+                        <a href="products.html" target="_blank" class="nav-link nav-text fw-bold">Products</a>
+                    </li>
+                    <li class="nav-item mx-3 h6">
+                        <a href="index.html#aboutus" class="nav-link nav-text fw-bold">About</a>
+                    </li>
+                    <li class="nav-item mx-3 h6">
+                        <a href="index.html#menu-section" class="nav-link nav-text fw-bold">Menu</a>
+                    </li>
+                    <li class="nav-item mx-3 h6">
+                        <a href="index.html#reviews-section" class="nav-link nav-text fw-bold">Reviews</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav mx-2">
+                    <li class="nav-item mx-2">
+                        <a href="wishlist.html" target="_blank" class="nav-link nav-icon-link">
+                            <div class="nav-circle">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a href="add_to_cart.html" class="nav-link nav-icon-link">
+                            <div class="nav-circle">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span id="cartCount"class="cart-count">0</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a href="loginpage.html" class="nav-link user-profile">
+                            <div class="nav-circle">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <span id="navbarUser">Login</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a href="#" class="nav-link logout-link" onclick="logout()">
+                            <div class="nav-circle logout-circle">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                            </div>
+                            <span class="logout-text">Logout</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Cart-section -->
+    
+    <div class="cart-section py-5">
+        <div class="container-fluid px-lg-5">
+            <div class="text-center mb-5">
+                <h1 class="cart-title">My Cart</h1>
+                <p class="cart-subtitle">Fresh coffee crafted specially for you</p>
+            </div>
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-8">
+                    <div id="cartContainer">
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="summary-card">
+                        <h3 class="summary-title">Order Summary</h3>
+                        <hr>
+                        <div class="delivery-box">
+                            <div class="delivery-item">
+                                <div class="delivery-icon">
+                                    <i class="fa-regular fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h6>Delivery Time</h6>
+                                    <p>30-45 mins</p>
+                                </div>
+                            </div>
+                            <div class="delivery-item mt-3">
+                                <div class="delivery-icon">
+                                    <i class="fa-regular fa-calendar"></i>
+                                </div>
+                                <div>
+                                    <h6>Delivery Date</h6>
+                                    <p id="deliveryDate"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="coupon-box mt-4">
+                            <input type="text" class="form-control coupon-input" placeholder="Enter Coupon Code" id="couponInput">
+                            <button class="btn coupon-btn" onclick="applyCoupon()">Apply</button>
+                        </div>
+                        <hr>
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="subtotal">₹0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Delivery Fee</span>
+                            <span>₹49</span>
+                        </div>
+                        <div class="summary-row discount-row">
+                            <span>Discount</span>
+                            <span id="discount">₹0</span>
+                        </div>
+                        <hr>
+                        <div class="summary-row total-row">
+                            <span>Total Amount</span>
+                            <span id="totalPrice">₹0</span>
+                        </div>
+                        <button class="btn checkout-btn w-100 mt-4" onclick="goToCheckout()">
+                            <i class="fa-solid fa-cart-shopping me-2"></i>Proceed To Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer-section -->
+<footer class="footer-section">
+    <div class="footer-overlay">
+        <div class="container py-5">
+            <div class="row gy-5">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <h2 class="footer-logo">
+                        <i class="fa-solid fa-mug-hot"></i>
+                        Aroma Cafe
+                    </h2>
+                    <p class="footer-text">
+                        Serving handcrafted coffee with warmth,comfort and unforgettable flavors.
+                    </p>
+                    <p class="footer-heading">Opening Hours</p>
+                    <p class="footer-text">Monday - Saturday 09AM - 09PM<br> Sunday 10AM - 08PM</p>
+                </div>
+                <div class="col-lg-2 col-md-6 col-12">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#menu-section">Menu</a></li>
+                        <li><a href="#aboutus">About</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            123, Anywhere st.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            1+234-456-7890
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            aromacafe@gmail.com
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/" class="social-icon">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/" class="social-icon">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://x.com/" class="social-icon">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.youtube.com/" class="social-icon">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-5">
+                <p>© 2026 Aroma Cafe | All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="js/add_to_cart.js"></script>
+</body>
+</html>

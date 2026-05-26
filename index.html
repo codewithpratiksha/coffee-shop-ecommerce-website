@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/indexstyle.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md  fixed-top">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand">
+                <img src="images/coffee-cup.png" alt="logo" width="50" height="50">
+                <span class="logo-text d-inline-block align-text-top">Aroma Cafe</span>
+            </a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu"><span class="navbar-toggler-icon"></span></button>
+            
+            <div class="collapse navbar-collapse menu justify" id="menu">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item mx-3 h6">
+                        <a href="index.html" class="nav-link nav-text fw-bold">Home</a>
+                    </li>
+                    <li class="nav-item mx-3 h6">
+                        <a href="products.html" target="_blank" class="nav-link nav-text fw-bold">Products</a>
+                    </li>
+                    <li class="nav-item mx-3 h6">
+                        <a href="#aboutus" class="nav-link nav-text fw-bold">About</a>
+                    </li>
+                    <li class="nav-item mx-3 h6">
+                        <a href="#menu-section" class="nav-link nav-text fw-bold">Menu</a>
+                    </li>
+                    <li class="nav-item mx-3 h6">
+                        <a href="#reviews-section" class="nav-link nav-text fw-bold">Reviews</a>
+                    </li>
+                </ul>   
+
+                <ul class="navbar-nav mx-2">
+                    <li class="nav-item mx-2">
+                        <a href="wishlist.html" target="_blank" class="nav-link nav-icon-link">
+                            <div class="nav-circle">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a href="add_to_cart.html" class="nav-link nav-icon-link">
+                            <div class="nav-circle">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span id="cartCount"class="cart-count">0</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a href="loginpage.html" class="nav-link user-profile">
+                            <div class="nav-circle">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <span id="navbarUser">Login</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a href="#" class="nav-link logout-link" onclick="logout()">
+                            <div class="nav-circle logout-circle">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                            </div>
+                            <span class="logout-text">Logout</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel Background -->
+<div class="container-fluid carousel-img">
+    <div class="row p-0">
+        <div class="col-lg-12 p-0">
+            <div class="carousel slide" id="myslider" data-bs-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li class="active" data-slide-to="0" data-bs-target="#myslider"></li>
+                    <li data-bs-slide-to="1" data-bs-target="#myslider"></li>
+                    <li data-bs-slide-to="2" data-bs-target="#myslider"></li>
+                </ul>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/carousel_image_1.jpg" alt="carousel_image_1" width="100%" height="500">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="images/carousel_image_2.jpg" alt="carousel_image_2" width="100%" height="500">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/carousel_image_3.jpg" alt="carousel_image_3" width="100%" height="500">
+                    </div>
+                </div>
+
+                <a href="#myslider" class="carousel-control-prev" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a href="#myslider" class="carousel-control-next" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Specialities -->
+<div class="container div_specials py-5">
+    <div class="gallery-line">
+        <div class="icon-box"><i class="fa-solid fa-mug-hot fa-lg"></i></div>
+        <h2 class="fw-bold s-text">Our Specialities</h2>
+        <div class="icon-box"><i class="fa-solid fa-mug-hot fa-lg"></i></div>
+    </div>
+    <p class="s-text2">Made fresh...Loved by Customers...</p>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col">
+            <div class="card specials shadow">
+                <img src="images/cappuccino_crop.jpg" width="100%" class="card-img-top img-fluid" alt="img1">
+                <div class="card-body">
+                    <h5 class="card-title">Cappuccino</h5>
+                    <p class="card-text">Rich espresso blended with perfectly steamed milk and a thick layer of airy froth.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card specials shadow">
+                <img src="images/latte_crop.jpg" width="100%" class="card-img-top" alt="img2">
+                <div class="card-body">
+                    <h5 class="card-title">Latte</h5>
+                    <p class="card-text">Rich espresso blended with smooth, creamy steamed milk and a light layer of foam.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card specials shadow">
+                <img src="images/mocha_crop.jpg" width="100%" class="card-img-top" alt="img3">
+                <div class="card-body">
+                    <h5 class="card-title">Mocha</h5>
+                    <p class="card-text">Rich espresso,steamed milk,and velvety cocoa with a crown of whipped cream.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card specials shadow">
+                <img src="images/americano_crop.jpg" width="100%" class="card-img-top" alt="img4">
+                <div class="card-body">
+                    <h5 class="card-title">Americano</h5>
+                    <p class="card-text">Espresso shots, poured over icy water to create a beautifully smooth finish.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card specials shadow">
+                <img src="images/espresso_crop.jpg" width="100%" class="card-img-top" alt="img5">
+                <div class="card-body">
+                    <h5 class="card-title">Espresso</h5>
+                    <p class="card-text">Pure pour of our rich, highly concentrated espresso. Bold, intense, and full-bodied.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card specials shadow">
+                <img src="images/cold coffee_crop.jpg" width="100%" class="card-img-top" alt="img6">
+                <div class="card-body">
+                    <h5 class="card-title">Cold Coffee</h5>
+                    <p class="card-text">Coffee blended with chilled milk and ice until thick, frothy, and wonderfully creamy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!-- WHY CHOOSE US SECTION - AboutUs-->
+  
+<div class="container-fluid choose-section py-5" id="aboutus">
+    <div class="text-center mb-5">
+        <h2 class="choose-title fw-bold">Why Choose Us?</h2>
+        <p class="choose-subtitle fw-bold">Your favorite neighborhood coffee spot..</p>
+    </div>
+    <div class="row text-center gy-5">
+        <div class="col-lg-3 col-md-6 col-12">
+            <div class="feature-box">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <h4 class="feature-title">4.6 Star Rated</h4>
+                <p class="feature-text">Highly rated by 30+ happy customers</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+            <div class="feature-box">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-couch"></i>
+                </div>
+                <h4 class="feature-title">Comfortable Ambience</h4>
+                <p class="feature-text">Peaceful and cozy atmosphere</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+            <div class="feature-box">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                </div>
+                <h4 class="feature-title">Affordable Pricing</h4>
+                <p class="feature-text">Quality food at reasonable prices</p>
+            </div>
+        </div> 
+        <div class="col-lg-3 col-md-6 col-12">
+            <div class="feature-box">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <h4 class="feature-title">Quick Service</h4>
+                <p class="feature-text">Fast and friendly service</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Coffee Gallery -->
+<div class="container-fluid gallery-section py-5 px-5" id="gallery">
+    <div class="gallery-line">
+        <div class="icon-box"><i class="fa-solid fa-mug-hot fa-lg"></i></div>
+        <h2 class="fw-bold gallery-text">Coffee Gallery</h2>
+        <div class="icon-box"><i class="fa-solid fa-mug-hot fa-lg"></i></div>
+    </div>
+    <p class="fw-bold gallery-text2">A glimpse of our coffee,our passion and our cozy place.</p>
+    <div class="row">
+        <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+            <img src="images/gallery_image1.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="gallery_image1"/>
+            <img src="images/gallery_image2.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="gallery_image2"/>
+        </div>
+        <div class="col-lg-4 mb-4 mb-lg-0">
+            <img src="images/gallery_image3.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="gallery_image3"/>
+            <img src="images/gallery_image4.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="gallery_image4"/>
+        </div>
+        <div class="col-lg-4 mb-4 mb-lg-0">
+            <img src="images/gallery_image5.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="gallery_image5"/>
+            <img src="images/gallery_image6.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="gallery_image6"/>
+        </div>
+    </div>
+</div>
+
+<!-- TESTIMONIAL SECTION - Reviews -->
+
+<div class="container-fluid testimonial-section py-5 px-5" id="reviews-section">
+    <div class="text-center mb-5">
+        <h2 class="testimonial-title fw-bold">What Our Customers Say</h2>
+            <p class="testimonial-subtitle fw-bold">Real reviews from real customers who love Aroma Cafe</p>
+    </div>
+    <div class="row g-4">
+        <div class="col-lg-4 col-md-6 col-12">
+            <div class="testimonial-card">
+                <p class="fw-bold review-title">Cappuccino</p>
+                <div class="stars mb-4">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">"The cappuccino was perfectly creamy and rich.One of the best coffees I've tried."</p>
+                <hr>
+                <div class="customer-info">
+                    <div class="customer-circle">
+                        NS
+                    </div>
+                    <div>
+                        <h5 class="customer-name">Nikhil Shinde</h5>
+                        <p class="review-time">2 weeks ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+            <div class="testimonial-card">
+                <p class="fw-bold review-title">Mocha</p>
+                <div class="stars mb-4">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">The mocha had the perfect chocolate-coffee blend. Highly recommended for chocolate lovers.</p>
+                <hr>
+                <div class="customer-info">
+                    <div class="customer-circle">
+                        SB
+                    </div>
+                    <div>
+                        <h5 class="customer-name">Snehal Bhandare</h5>
+                        <p class="review-time">1 month ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+            <div class="testimonial-card">
+                <p class="fw-bold review-title">Latte</p>
+                <div class="stars mb-4">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">Smooth texture and balanced flavor.The latte tasted absolutely premium.</p>
+                <hr>
+                <div class="customer-info">
+                    <div class="customer-circle">
+                        KK
+                    </div>
+                    <div>
+                        <h5 class="customer-name">Kiran Kamble</h5>
+                        <p class="review-time">3 weeks ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MENU IMAGE SECTION -->
+<div class="container-fluid menu-image-section py-5 px-5" id="menu-section">
+    <div class="text-center mb-5">
+        <h2 class="menu-title fw-bold">Our Menu</h2>
+        <p class="menu-subtitle fw-bold">Discover our handcrafted coffees and delicious beverages</p>
+    </div>
+    <div class="menu-image-box">
+        <img src="images/menu_image.png" alt="menu image" class="img-fluid menu-image">
+    </div>
+</div>
+
+<!--Footer Section-->
+
+<footer class="footer-section">
+    <div class="footer-overlay">
+        <div class="container py-5">
+            <div class="row gy-5">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <h2 class="footer-logo">
+                        <i class="fa-solid fa-mug-hot"></i>
+                        Aroma Cafe
+                    </h2>
+                    <p class="footer-text">
+                        Serving handcrafted coffee with warmth,comfort and unforgettable flavors.
+                    </p>
+                    <p class="footer-heading">Opening Hours</p>
+                    <p class="footer-text">Monday - Saturday 09AM - 09PM<br> Sunday 10AM - 08PM</p>
+                </div>
+                <div class="col-lg-2 col-md-6 col-12">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#menu-section">Menu</a></li>
+                        <li><a href="#aboutus">About</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            123, Anywhere st.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            1+234-456-7890
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            aromacafe@gmail.com
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/" class="social-icon">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/" class="social-icon">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://x.com/" class="social-icon">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.youtube.com/" class="social-icon">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-5">
+                <p>© 2026 Aroma Cafe | All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/index.js"></script>
+
+</body>
+</html>

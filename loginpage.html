@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/loginpage.css">
+</head>
+<body>
+    <div class="login-section">
+        <div class="login-overlay">
+            <div class="container py-5">
+                <div class="row justify-content-center align-items-center min-vh-100">
+                    <div class="col-lg-5 col-md-7 col-sm-10 col-11">
+                        <div class="login-box">
+                            <div class="text-center mb-4">
+                                <h2 class="login-logo">
+                                    <i class="fa-solid fa-mug-hot"></i>
+                                    Aroma Cafe
+                                </h2>
+                                <p class="login-subtitle">
+                                    Welcome back coffee lover
+                                </p>
+                            </div>
+                            <form id="loginForm">
+                                <div class="mb-4">
+                                    <label class="form-label">
+                                        Email Address
+                                    </label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="fa-solid fa-envelope"></i>
+                                        </span>
+                                        <input type="email" class="form-control" placeholder="Enter your email" id="email" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Password</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="fa-solid fa-lock"></i>
+                                        </span>
+                                        <input type="password" class="form-control" placeholder="Enter password" id="password" required>
+                                        <button type="button" class="btn eye-btn" onclick="togglePassword()">
+                                            <i class="fa-solid fa-eye" id="eyeIcon"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <div>
+                                        <input type="checkbox" id="remember">
+                                        <label for="remember" class="remember-text"> Remember Me</label>
+                                    </div>
+                                    <a href="#" class="forgot-link">Forgot Password?</a>
+                                </div>
+                                <button type="submit" class="btn login-btn w-100">Login</button>
+                                <div class="divider">
+                                    <span>OR</span>
+                                </div>
+                                <div class="social-login">
+                                    <a href="https://www.google.com/" class="social-btn">
+                                        <i class="fa-brands fa-google"></i>
+                                    </a>
+                                    <a href="https://www.facebook.com/" class="social-btn">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/" class="social-btn">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                </div>
+                                <p class="register-text">Don’t have an account?
+                                    <a href="registerpage.html">Register</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/loginpage.js"></script>
+
+</body>
+</html>

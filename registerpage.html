@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/registerpage.css">
+</head>
+<body>
+    <div class="register-section">
+        <div class="register-overlay">
+            <div class="container py-5">
+                <div class="row justify-content-center align-items-center min-vh-100">
+                    <div class="col-lg-5 col-md-7 col-sm-10 col-11">
+                        <div class="register-box">
+                            <div class="text-center mb-4">
+                                <h2 class="register-logo">
+                                    <i class="fa-solid fa-mug-hot"></i>
+                                    Aroma Cafe
+                                </h2>
+                                <p class="register-subtitle">Create your coffee account</p>
+                            </div>
+                            <form id="registerForm">
+                                <div class="mb-3">
+                                    <label class="form-label">Full Name</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="fa-solid fa-user"></i>
+                                        </span>
+                                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email Address</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="fa-solid fa-envelope"></i>
+                                        </span>
+                                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Password</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="fa-solid fa-lock"></i>
+                                        </span>
+                                        <input type="password" class="form-control" id="password" placeholder="Create password" required>
+                                        <button type="button"class="btn eye-btn" onclick="togglePassword()">
+                                            <i class="fa-solid fa-eye" id="eyeIcon"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Confirm Password</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="fa-solid fa-lock"></i>
+                                        </span>
+                                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" required>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn register-btn w-100">Create Account</button>
+                                <div class="divider">
+                                    <span>OR</span>
+                                </div>
+                                <div class="social-login">
+                                    <a href="https://www.google.com/" class="social-btn">
+                                        <i class="fa-brands fa-google"></i>
+                                    </a>
+                                    <a href="https://www.facebook.com/" class="social-btn">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/" class="social-btn">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                </div>
+                                <p class="login-text">Already have an account?
+                                    <a href="loginpage.html">Login</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/registerpage.js"></script>
+
+</body>
+</html>
