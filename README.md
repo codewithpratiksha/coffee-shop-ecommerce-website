@@ -39,6 +39,12 @@ Responsive Coffee Shop Ecommerce Website built using HTML, CSS, Bootstrap 5 and 
 
 ---
 
+## 🔗 Live Demo
+
+https://codewithpratiksha.github.io/coffee-shop-ecommerce-website/
+
+---
+
 ## Author
 
 Pratiksha Shinde
